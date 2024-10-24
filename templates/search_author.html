@@ -1,0 +1,22 @@
+{% extends "home.html" %}
+
+{% block blockName %}
+<select name="search_by_html" class="text-black font-semibold rounded-sm">
+    <option>Search by Author</option>
+</select>
+{% endblock %}
+
+{% block search_Author %}
+
+<form method="POST" action="/search_by_author" id="search_author_form">
+    <select name="search_Author" class="text-black rounded-lg">
+        {% for i in range(len_allBooks) %}
+        <option>{{ myBooks[i] }}</option>
+        {% endfor %}
+    </select>
+</form>
+{% endblock %}
+
+{% block search_button %}
+<button type="submit" form="search_author_form">Search</button>
+{% endblock %}

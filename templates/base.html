@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/tailwind_output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>ADE-Library</title>
+</head>
+<body 
+    class="bg-fixed bg-center h-[100vh] bg-no-repeat bg-cover bg-gray-600 bg-blend-multiply font-serif backdrop-blur-sm"
+    style="background-image: url(../static/images/background.jpg);"
+>
+    <div class="flex p-3 flex-col text-[3vw] lg:text-lg md:text-sm sm:text-sm text-white">
+        <div class="flex justify-between flex-col items-center lg:flex-row md:flex-row" id="nav_bar">
+            <a href="\" class="font-serif flex gap-1 items-center">
+                <img src="../static/images/logo.avif" class="w-14 rounded-lg"/>
+                <div class="text-yellow-300">ADE-Library</div>
+            </a>
+            <!-- <div> -->
+                <ul class="flex gap-4">
+                    <li><a href="/all_books">ALL BOOKS</a></li>
+                    <li class="border-solid border-l-[2px] pl-2"><a href="/upload">UPLOAD</a></li>
+                </ul>
+            <!-- </div> -->
+        </div>
+        
+    {% block content %}
+        
+    {% endblock %}
+    </div>
+</body>
+</html>

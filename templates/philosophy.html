@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="flex flex-wrap justify-center gap-3 m-7">
+    {% for i in range(len_element)%}    
+    <div class="border border-solid border-white p-3 w-56">
+        <div class="flex justify-center">
+            <img src="../static/images/temp.png" class="h-16 rounded-lg"/>
+        </div>
+        <hr/>
+        <div class="flex flex-col", style="justify-content: space-between;">
+            <div>
+                <p>TITLE: {{ element[i]['Title'] }}</p>
+                <hr/>
+                <p>AUTHOR: {{ element[i]['Author'] }}</p>
+                <hr/>
+                <p>SUBJECT: {{ element[i]['Subject'] }}</p>
+            </div>
+            <div >
+                <a href="{{ element[i]['Link'] }}" class="w-[100%]" target="_blank">
+                    <div class="text-center bg-yellow-300 text-black rounded-3xl mt-2">READ</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+</div> 
+{% endblock %}
+
+
+{{ element[i]['Link'] }}

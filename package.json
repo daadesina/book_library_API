@@ -1,0 +1,17 @@
+{
+  "name": "book_library_api",
+  "version": "1.0.0",
+  "description": "alx_specialisation_portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adesina and Adeteju",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}

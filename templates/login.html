@@ -1,0 +1,18 @@
+{% extends "landing_page.html" %}
+
+{% block landing_content %}
+<div>
+    <div class="flex flex-col justify-between items-center lg:flex-row md:flex-row sm:flex-row" id="landing_navbar">
+        <a href="/" class="font-serif flex gap-1 items-center">
+            <img src="../static/images/logo.avif" class="w-14 rounded-lg"/>
+            <div class="text-black">ADE-Library</div>
+        </a>
+        <div class="bg-gray-300 rounded-lg mt-3">
+            <a href="/" class="btn">Home</a>
+            <a href="/signup" class="btn">Sign Up</a>
+            <a href="/login" class="btn bg-primary text-white">Login</a>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

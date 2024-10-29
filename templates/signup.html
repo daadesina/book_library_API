@@ -13,5 +13,28 @@
             <a href="/login" class="btn">Login</a>
         </div>
     </div>
+        <form method="POST" class="mt-2">
+            {{ signup_html.hidden_tag() }}
+            <p>
+                {{ signup_html.first_name.label }}
+               <span class="ml-3"> {{ signup_html.first_name() }} </span>
+            </p>
+            <p class="mt-2">
+                {{ signup_html.last_name.label }}
+               <span class="ml-3 "> {{ signup_html.last_name() }} </span>
+            </p>
+            <p class="mt-2">
+                {{ signup_html.email.label }}
+               <span class="ml-12"> {{ signup_html.email() }} </span>
+            </p>
+            <p class="mt-2">
+                {{ signup_html.password.label }}
+               <span class="ml-5"> {{ signup_html.password() }} </span>
+            </p class="mt-2">
+            <p class="bg-primary w-20 text-center rounded-3xl mt-3 text-white">{{ signup_html.sign_up() }}</p>
+        </form>
+    <div>
+
+    </div>
 </div>
 {% endblock %}

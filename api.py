@@ -1,6 +1,7 @@
 from flask import Flask, request, Blueprint, jsonify
 import json, sqlite3
 from functionsAPI import connectDB, readFunc, writeFunc, readSpecFunc, updateSpecFunc, deleteSpecFunc
+from authentication import connectAuthDB, readAuthFunc, readAuthSpecFunc, updateAuthSpecFunc, deleteAuthSpecFunc, writeAuthFunc
 
 apiBp = Blueprint("apiBp", __name__)
 
@@ -48,3 +49,41 @@ def single_book(id):
     
     if request.method == "DELETE":
         return jsonify(deleteSpecFunc(id))
+    
+
+
+
+
+
+@apiBp.route('/auth', methods = ["GET", "POST"])
+def account ():
+    if request.method == "GET":
+       return jsonify(readAuthFunc())
+        
+    if request.method == "POST":
+        first_name = request.form["First_Name"]
+        last_name = request.form["Last_Name"]
+        email = request.form["Email"]
+        password = request.form["Password"]
+        
+        myData = writeAuthFunc(first_name, last_name, email, password)
+        
+        return jsonify(myData)
+    
+@apiBp.route('/auth/<int:id>', methods = ['GET', 'PUT', 'DELETE' ])
+def single_account(id):
+    if request.method == 'GET':
+        return jsonify(readAuthSpecFunc(id))
+    
+    if request.method == "PUT":
+        first_name = request.form["First_Name"]
+        last_name = request.form["Last_Name"]
+        email = request.form["Email"]
+        password = request.form["Password"]
+        
+        myData = updateAuthSpecFunc(first_name, last_name, email, password, id)
+        
+        return jsonify(myData)
+    
+    if request.method == "DELETE":
+        return jsonify(deleteAuthSpecFunc(id))

@@ -13,6 +13,20 @@
             <a href="/login" class="btn bg-primary text-white">Login</a>
         </div>
     </div>
-    
+    <div>
+        <form method="POST" class="mt-2">
+            {{ login_html.hidden_tag() }}
+            <p>
+                {{ login_html.email.label }}
+                <span class="ml-12"> {{ login_html.email() }} </span>
+            </p>
+            <p class="mt-2">
+                {{ login_html.password.label }}
+                <span class="ml-5"></span>{{ login_html.password() }}</span>
+            </p class="mt-2">
+            <p class="bg-primary w-20 text-center rounded-3xl mt-3 text-white">{{ login_html.log_in() }}</p>
+        </form>
+    </div>
+
 </div>
 {% endblock %}

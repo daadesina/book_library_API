@@ -149,7 +149,6 @@ def readSpecFunc(id):
         specBook = allBookData[id-1]
         for num in range(len(specBook)):
             myBook = dict(id=specBook[0], Title=specBook[1], Author=specBook[2], Subject=specBook[3], Link=specBook[4])
-        # return(json.dumps(myBook))
         return(myBook)
      
 def updateSpecFunc(Title, Author, Subject, Link, id):

@@ -3,23 +3,20 @@
 
 {% block content %}
 <div class="flex flex-wrap justify-center gap-3 m-7">
-    {% for i in range(len_element)%}    
-    <div class="border border-solid border-white p-3 w-56">
-        <div class="flex justify-center">
-            <img src="../static/images/temp.png" class="h-16 rounded-lg"/>
-        </div>
-        <hr/>
-        <div>
-            <p>TITLE: {{ element[i]['Title'] }}</p>
-            <hr/>
+    {% for i in range(len_element)%}
+    
+    <div class="card bg-inherit text-white" style="width: 18rem;">
+        <img src="../static/images/temp.png" class="card-img-top" alt="book">
+        <div class="card-body">
+          <h5 class="card-title">{{ element[i]['Title'] }}</h5>
+          <p class="card-text">
             <p>AUTHOR: {{ element[i]['Author'] }}</p>
-            <hr/>
             <p>SUBJECT: {{ element[i]['Subject'] }}</p>
-            <a href="{{ element[i]['Link'] }}" class="w-[100%]" target="_blank">
-                <div class="text-center bg-yellow-300 text-black rounded-3xl mt-2">READ</div>
-            </a>
+          </p>
+          <a href="{{ element[i]['Link'] }}" class="btn btn-primary">Read</a>
         </div>
-    </div>
+      </div>
+    
     {% endfor %}
     
 </div> 

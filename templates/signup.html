@@ -12,28 +12,30 @@
             <a href="/signup" class="btn bg-primary text-white">Sign Up</a>
             <a href="/login" class="btn">Login</a>
         </div>
-    </div>
-        <form method="POST" class="mt-2">
-            {{ signup_html.hidden_tag() }}
+    </div >
+    <div class="flex justify-center">
+        <form method="POST" class="m-4">
             <p>
-                {{ signup_html.first_name.label }}
-               <span class="ml-3"> {{ signup_html.first_name() }} </span>
+                <label for="first_name">First Name</label><br/>
+                <input type="text" required name="first_name_html" class="rounded-xl lg:w-96 md:w-80 sm:w-72 p-1"/>
             </p>
             <p class="mt-2">
-                {{ signup_html.last_name.label }}
-               <span class="ml-3 "> {{ signup_html.last_name() }} </span>
+                <label for="last_name">Last Name</label><br/>
+                <input type="text" required name="last_name_html" class="rounded-xl lg:w-96 md:w-80 sm:w-72 p-1"/>
             </p>
             <p class="mt-2">
-                {{ signup_html.email.label }}
-               <span class="ml-12"> {{ signup_html.email() }} </span>
+                <label for="email">Email</label><br/>
+                <input type="email" required name="email_html" class="rounded-xl lg:w-96 md:w-80 sm:w-72 p-1"/>
             </p>
             <p class="mt-2">
-                {{ signup_html.password.label }}
-               <span class="ml-5"> {{ signup_html.password() }} </span>
-            </p class="mt-2">
-            <p class="bg-primary w-20 text-center rounded-3xl mt-3 text-white">{{ signup_html.sign_up() }}</p>
+                <label for="password">Password</label><br/>
+                <input type="password" required name="password_html" class="rounded-xl lg:w-96 md:w-80 sm:w-72 p-1"/>
+            </p>
+            <div class="flex justify-center">
+                <button type="submit" class="mt-2 btn btn-primary" >Sign Up</button>
+            </div>
+                
         </form>
-    <div>
 
     </div>
 </div>

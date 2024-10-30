@@ -84,25 +84,16 @@ def landingPage():
 
 @authBp.route('/signup', methods=['GET', 'POST'])
 def signup():
-    signup_py = SignupClass()
-    first_name_py = None
-    last_name_py = None
-    email_py = None
-    password_py = None
     if request.method == 'POST':
-        first_name_py = signup_py.first_name.data
-        last_name_py = signup_py.last_name.data
-        email_py = signup_py.email.data
-        password_py = signup_py.password.data
-        signup_py.first_name.data = ""
-        signup_py.last_name.data = ""
-        signup_py.email.data = ""
-        signup_py.password.data = ""
+        first_name_py = request.form['first_name_html']
+        last_name_py = request.form['last_name_html']
+        email_py = request.form['email_html']
+        password_py = request.form['password_html']
         readAuth = readAuthFunc()
         for i in range(len(readAuth)):
             if readAuth[i]['Email'] == email_py:
                 return ('Email Taken')
         writeAuthFunc(first_name_py, last_name_py, email_py, password_py)
         return redirect(url_for("login"))
-    return render_template('signup.html', signup_html = signup_py)
+    return render_template('signup.html')
 

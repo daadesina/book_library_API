@@ -1,0 +1,41 @@
+
+<form method="POST" class="mt-2">
+            {{ signup_html.hidden_tag() }}
+            <p>
+                {{ signup_html.first_name.label }}
+               <span class="ml-3"> {{ signup_html.first_name() }} </span>
+            </p>
+            <p class="mt-2">
+                {{ signup_html.last_name.label }}
+               <span class="ml-3 "> {{ signup_html.last_name() }} </span>
+            </p>
+            <p class="mt-2">
+                {{ signup_html.email.label }}
+               <span class="ml-12"> {{ signup_html.email() }} </span>
+            </p>
+            <p class="mt-2">
+                {{ signup_html.password.label }}
+               <span class="ml-5"> {{ signup_html.password() }} </span>
+            </p class="mt-2">
+            <p class="bg-primary w-20 text-center rounded-3xl mt-3 text-white">{{ signup_html.sign_up() }}</p>
+        </form>
+
+
+
+
+        
+    <div class="border border-solid border-white p-3 w-56">
+        <div class="flex justify-center">
+            <img src="../static/images/temp.png" class="h-16 rounded-lg"/>
+        </div>
+        <hr/>
+        <div>
+            <p>TITLE: {{ element[i]['Title'] }}</p>
+            <hr/>
+            <p>AUTHOR: {{ element[i]['Author'] }}</p>
+            <p>SUBJECT: {{ element[i]['Subject'] }}</p>
+            <a href="{{ element[i]['Link'] }}" class="w-[100%]" target="_blank">
+                <div class="text-center bg-yellow-300 text-black rounded-3xl mt-2">READ</div>
+            </a>
+        </div>
+    </div>
